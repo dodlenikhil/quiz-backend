@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import com.Jdbc.curd.QuestionDto.QuestionDto;
 import com.Jdbc.curd.QuestionDto.QuizSubmitDto;
+
 import com.Jdbc.curd.Quizservice.Quizservice;
+import com.Jdbc.curd.entity.Question;
 
 
 
@@ -21,7 +23,7 @@ public class Quizcontroller {
 
     @GetMapping("/{topic}")
     public List<QuestionDto> getQuestions(
-            @PathVariable("topic") String topic){
+            @PathVariable String topic){
 
         return service.getQuestions(topic);
     }
@@ -31,5 +33,12 @@ public class Quizcontroller {
             @RequestBody List<QuizSubmitDto> answers){
 
         return service.calculateScore(answers);
+    }
+
+    @PostMapping("/add")
+    public Question addQuestion(
+            @RequestBody Question question){
+
+        return service.addQuestion(question);
     }
 }

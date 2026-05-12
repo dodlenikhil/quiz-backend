@@ -60,4 +60,9 @@ public class Quizservice {
 
         return score;
     }
+
+	public Question addQuestion(Question question){
+
+    return repo.save(question);
+}
 }
