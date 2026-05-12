@@ -1,4 +1,4 @@
-insert into quiz.question
+insert into question
 (topic,question,option1,option2,option3,option4,answer)
 values
 ('Java',
