@@ -21,7 +21,7 @@ public class Quizservice {
 
     public List<QuestionDto> getQuestions(String topic){
 
-        List<Question> questions = repo.findByTopic	(topic);
+        List<Question> questions =repo.findByTopicIgnoreCase(topic);
 
         List<QuestionDto> dtoList = new ArrayList<>();
 

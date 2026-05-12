@@ -12,7 +12,8 @@ import com.Jdbc.curd.entity.Question;
 @Repository
 public interface Quizrepo extends JpaRepository<Question, Long>{
 
-    List<Question> findByTopic(String topic);
+   List<Question> findByTopicIgnoreCase(String topic);
+   
 
 	
 
